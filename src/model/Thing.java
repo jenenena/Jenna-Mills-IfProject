@@ -34,6 +34,7 @@ public class Thing
 	 * @param name is the name he'll be given
 	 */
 
+	//setters!
 	public void setName(String name)
 	{
 		this.name = name;
