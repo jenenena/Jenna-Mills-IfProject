@@ -10,7 +10,8 @@ public class Thing
 	//objects --> null
 	private String name;
 	private boolean isSad;
-	private boolean flowers;
+	private double flowers;
+	
 	
 	
 	
@@ -23,7 +24,7 @@ public class Thing
 	{
 		this.name = "unnamed buddy";
 		this.isSad = false;
-		this.flowers = false;
+		this.flowers = 0;
 	}
 	
 	
@@ -45,7 +46,7 @@ public class Thing
 		this.isSad = isSad;
 	}
 
-	public void setFlowers(boolean flowers)
+	public void setFlowers(double flowers)
 	{
 		this.flowers = flowers;
 	}
@@ -65,8 +66,29 @@ public class Thing
 		return isSad;
 	}
 	
-	public boolean getFlowers()
+	public double getFlowers()
 	{
-		return flowers;
+		return flowers; 
 	}
+	
+	public String toString()
+	{
+		String description = "Our thing, " + name + ", has recieved " + flowers + " flowers.";
+		
+		return description;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

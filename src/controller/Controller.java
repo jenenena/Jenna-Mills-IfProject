@@ -21,7 +21,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		askUser();
+		forLoopert();
 		//String myThingName = JOptionPane.showInputDialog(null, "What should we call my thing?");
 		
 		//JOptionPane.showMessageDialog(null, "This is my Thing. His name is: " + myThing.getName());
@@ -71,6 +71,40 @@ public class Controller
 	
 	}
 
+	private void forLoopert()
+	{
+		
+		for (int count = 1; count <= 4; count++)
+		{
+			JOptionPane.showMessageDialog(null, "This is our thing #" + count);
+			askUser();
+		}	
+	}
+	
+	
+	private void askUser()
+	{
+		Thing userThing = new Thing();
+		
+		String aResponse = JOptionPane.showInputDialog(null, "What shall we name our thing?");
+		userThing.setName(aResponse);
+		
+
+		String response = JOptionPane.showInputDialog(null, "How many flowers should we give " + aResponse + "?");
+		while (!validDouble(response))
+		{
+	
+			response = JOptionPane.showInputDialog(null, "Please type in a number of flowers or " + aResponse + " will be sad...");
+			
+		}
+		if (validDouble(response))
+		{
+			userThing.setFlowers(Double.parseDouble(response));
+			JOptionPane.showMessageDialog(null, "You gave " + aResponse + " " + response + " flowers!");
+		}
+		JOptionPane.showMessageDialog(null, userThing);
+	}
+
 	
 	public boolean validInt(String maybeInt)
 	{
@@ -106,18 +140,9 @@ public class Controller
 	}
 
 	
-	private void askUser()
-	{
-		String response = JOptionPane.showInputDialog(null, "What is the distance?");
-		
-		while (!validDouble(response))
-		{
 	
-			response = JOptionPane.showInputDialog(null, "Please type in a valid number or I will be sad");
-			
-		}
 		
-	}
+
 
 
 
