@@ -74,6 +74,7 @@ public class Thing
 	public String toString()
 	{
 		String description = "Our thing, " + name + ", has recieved " + flowers + " flowers.";
+		description += name + " is thankful for the flowers. :)";
 		
 		return description;
 	}

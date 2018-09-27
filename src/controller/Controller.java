@@ -87,11 +87,18 @@ public class Controller
 		Thing userThing = new Thing();
 		
 		String aResponse = JOptionPane.showInputDialog(null, "What shall we name our thing?");
+		while (aResponse == null || aResponse.equals(""))
+		{
+			
+			String bResponse = JOptionPane.showInputDialog(null, "Please name our thing, pretty please?");
+			aResponse = bResponse;
+		}
+		
 		userThing.setName(aResponse);
 		
 
 		String response = JOptionPane.showInputDialog(null, "How many flowers should we give " + aResponse + "?");
-		while (!validDouble(response))
+		while (response == null || !validDouble(response))
 		{
 	
 			response = JOptionPane.showInputDialog(null, "Please type in a number of flowers or " + aResponse + " will be sad...");
